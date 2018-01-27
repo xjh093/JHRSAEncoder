@@ -6,6 +6,9 @@ RSA encode with openssl
 
 the file ``libcrypto.a`` in openssl cann't upload, because it's 36.6MB
 
+download url of openssl folder :https://pan.baidu.com/s/1dy4sd4
+
+-----
 if can't find header file: add the path of folder ``JHRSAEncoder`` in `Header Search Path`
 
 
