@@ -236,18 +236,18 @@
     for (int i = 0; i < string.length; i+=172) {
         NSUInteger length = (string.length - i) > 172 ? 172 : string.length - i;
         NSString *subString = [string substringWithRange:NSMakeRange(i, length)];
-        NSString *encodeString = nil;
+        NSString *decodeString = nil;
         if (type == 0) {
-            encodeString = [self jh_decodeString:subString withPublicKey:pemName];
+            decodeString = [self jh_decodeString:subString withPublicKey:pemName];
         }else{
-            encodeString = [self jh_decodeString:subString withPrivateKey:pemName];
+            decodeString = [self jh_decodeString:subString withPrivateKey:pemName];
         }
         
-        if (encodeString == nil) {
+        if (decodeString == nil) {
             flag = YES;
             break;
         }
-        [marr addObject:encodeString];
+        [marr addObject:decodeString];
     }
     
     if (flag) {
