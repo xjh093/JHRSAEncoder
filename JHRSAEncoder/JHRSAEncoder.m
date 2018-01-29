@@ -114,6 +114,12 @@
     NSString *outputString = @"";
     if (status > 0) {
         outputString = [[NSMutableString alloc] initWithBytes:decodeData length:strlen(decodeData) encoding:NSASCIIStringEncoding];
+        // NSLog(@"length:%@",@(strlen(decodeData)));
+        // NSLog(@"outputString:%@",outputString);
+        if (outputString.length > 117) {
+            outputString = [outputString substringToIndex:117];
+            // NSLog(@"outputString:%@",outputString);
+        }
     }
     free(decodeData);
     decodeData = NULL;
